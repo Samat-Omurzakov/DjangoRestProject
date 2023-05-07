@@ -10,6 +10,7 @@ from product.models import Category, Product, Review
 # Create your views here.
 @api_view(['GET', 'POST'])
 def product_api_view(request):
+    print(request.user)
     if request.method == 'GET':
         """ Get List of objects """
         product = Product.objects.all()
