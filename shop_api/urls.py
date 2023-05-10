@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from product.views import ReviewListCreateAPIView, ReviewDetailAPIView, products_reviews_api_view, \
     ProductDetailAPIView, ProductListCreateAPIView, CategoryListCreateAPIView, CategoryDetailAPIView
+from shop_api import swagger
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +30,4 @@ urlpatterns = [
     path('api/v1/reviews/<int:pk>/', ReviewDetailAPIView.as_view()),
     path('api/v1/products/reviews/', products_reviews_api_view),
     path('api/v1/users/', include('users.urls'))
-]
+] + swagger.urlpatterns

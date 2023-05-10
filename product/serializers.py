@@ -42,4 +42,4 @@ class CategoryValidateSerializers(serializers.Serializer):
 class ReviewValidateSerializers(serializers.Serializer):
     text = serializers.CharField(min_length=1)
     product_id = serializers.IntegerField(min_value=1)
-    stars = serializers.IntegerField(min_value=1)
+    stars = serializers.IntegerField(min_value=1, max_value=5)
